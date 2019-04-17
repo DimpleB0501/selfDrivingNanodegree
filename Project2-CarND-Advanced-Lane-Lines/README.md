@@ -45,7 +45,8 @@ The code for this implementation is in cell 8,9 and 10 of the submitted code.
 #### 4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
 After applying calibration, thresholding and perspective transform we have an binary image where the lane lines stand out clearly. To determine which pixels are part of the lines as well as to determine if the belong to right or left lines.
 I first take a histogram along all columns in lower half of image. The prominenet peaks in this histogram will be good indicators of base position of lane lines. After which sliding window is placed around line centers to track the lines to the top of the frame. Following image is an implementation of this step:
-![Sliding Window](https://github.com/DimpleB0501/udacitySelfDrivingNanoDegreeTerm1/tree/master/Project2-CarND-Advanced-Lane-Lines/output_images/firstSearch.png)
+![Sliding Window](https://github.com/DimpleB0501/selfDrivingNanodegree/blob/master/Project2-CarND-Advanced-Lane-Lines/output_images/firstSearch.png)
+
 As per the course notes I have implemented a function which searches around previously detected lane lines since consecutive frames are suppose to have lane lines in fairly similar positions. The output image for this implementation is as flows
 ![Search From Prior](https://github.com/DimpleB0501/selfDrivingNanodegree/blob/master/Project2-CarND-Advanced-Lane-Lines/output_images/searchFromPrior.png)
 The code for this implementation is in cells 11-15 of the submitted code.
@@ -65,14 +66,16 @@ In step 18 I implemented inverse perspective transform and the result is followi
 
 #### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
 
-Here's a link to my video result
+Here's a link to my video result:
+
 |Test video|
 |:------------:|
 |![Advance lane lines](https://github.com/DimpleB0501/selfDrivingNanodegree/blob/master/Project2-CarND-Advanced-Lane-Lines/output_images/testVideo.gif) |
 |[Youtube Link](https://youtu.be/Y02nLcZSTIw)|
 
 
-Output on challenge videos
+Output on challenge videos:
+
 |Challenge video 1|Challenge video 2|
 |:------------:|:------------:|
 |[Youtube Link](https://youtu.be/QIAwOpBLncw)|[Youtube Link](https://youtu.be/2wy2M3qYtlI)|
