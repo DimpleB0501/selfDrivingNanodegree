@@ -54,6 +54,7 @@ To add more data to the the data set, I used the following techniques
 * Image smoothing by bilateral filter
 * Random Perspective transform
 * Random translation of the image
+
 ![Augmentation output images](https://github.com/DimpleB0501/selfDrivingNanodegree/blob/master/Project3-CarND-Traffic-Sign-Classifier-Project/output_images/augmentation.png)
 
 Only the classes that have less than 800 images in the training data set are invoked in data augmentation. Code block 17 displays the data augmentation code. Above mentioned augmentation techniques are randomly applied to randomly picked images from these data sets.
