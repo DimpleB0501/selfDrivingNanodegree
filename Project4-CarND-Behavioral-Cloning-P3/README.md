@@ -82,6 +82,7 @@ I followed Udacity's lectures to setup the data preprocessing, augmentation and 
 
 At the end of the process, the vehicle is able to drive autonomously around the track without leaving the road.
 Following is the **output video** of the car autonomously driving through the lap in the simulator.
+
 |Output video of car driving autonomously in simulator|
 |:------------:|
 |![Output video](https://github.com/DimpleB0501/selfDrivingNanodegree/blob/master/Project4-CarND-Behavioral-Cloning-P3/images/simulator.gif)|
