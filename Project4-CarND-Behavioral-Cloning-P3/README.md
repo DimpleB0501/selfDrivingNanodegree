@@ -77,14 +77,14 @@ As mentioned previously, the training took place on a Amazon EC2 instance. The n
 * Loss Function Used- MSE(Mean Squared Error as it is efficient for regression problem).
 
 ### Thought process
-I followed Udacity's lectures to setup the data preprocessing, augmentation and architecture design blocks. To quickly test out the implemented code I trained on 1 epoch (loss:0.0303) and the steps per epoch was  minimal and set to  (len(train_samples) * 0.01). When I ran the model in the simulator the car was able to stay on track/ center of the road for the whole lap, however it drived slowly throughout the lap. This model is saved as 'model_backup.h5'. As suggested in the class 2-5 epochs should be sufficient for training the model, I increased the number of epochs to 5 with the intent to lower the MSE loss and ran the models through length of training samples as steps per epoch. and ensuring that the vehicle could stay on the track. The loss came down to 0.0062 at end of 1st epoch and the validation loss was 0.0216. However with the batch size of 128 it took more than 2.5 hrs to train one epoch. Since I didn't want to waste GPU time I reduce the batch size to 32.  I trained the network again at the end of the 5th epoch I got an trainning loss of 0.0015 and validation loss of 0.0169. Following snapshot displays the training and the validation losses at each epoch. 
-![Losses at each epoch](https://github.com/DimpleB0501/udacitySelfDrivingNanoDegreeTerm1/blob/master/Project4-CarND-Behavioral-Cloning-P3/images/Losses.png) 
+I followed Udacity's lectures to setup the data preprocessing, augmentation and architecture design blocks. To quickly test out the implemented code I trained on 1 epoch (loss:0.0303) and the steps per epoch was  minimal and set to  (len(train_samples) * 0.01). When I ran the model in the simulator the car was able to stay on track/ center of the road for the whole lap, however it drived slowly throughout the lap. This model is saved as 'model_backup.h5'. As suggested in the class 2-5 epochs should be sufficient for training the model, I increased the number of epochs to 5 with the intent to lower the MSE loss and ran the models through length of training samples as steps per epoch. and ensuring that the vehicle could stay on the track. The loss came down to 0.0062 at end of 1st epoch and the validation loss was 0.0216. However with the batch size of 128 it took more than 2.5 hrs to train one epoch. Since I didn't want to waste GPU time I reduce the batch size to 32.  I trained the network again at the end of the 5th epoch I got an trainning loss of 0.0015 and validation loss of 0.0169. Following snapshot displays the training and the validation losses at each epoch.
+![Losses at each epoch](https://github.com/DimpleB0501/selfDrivingNanodegree/blob/master/Project4-CarND-Behavioral-Cloning-P3/images/Losses.png) 
 
-At the end of the process, the vehicle is able to drive autonomously around the track without leaving the road. 
+At the end of the process, the vehicle is able to drive autonomously around the track without leaving the road.
 Following is the **output video** of the car autonomously driving through the lap in the simulator.
 |Output video of car driving autonomously in simulator|
 |:------------:|
-|![Output video](https://github.com/DimpleB0501/udacitySelfDrivingNanoDegreeTerm1/blob/master/Project4-CarND-Behavioral-Cloning-P3/images/simulator.gif)|
+|![Output video](https://github.com/DimpleB0501/selfDrivingNanodegree/blob/master/Project4-CarND-Behavioral-Cloning-P3/images/simulator.gif)|
 |[Youtube Link](https://youtu.be/BZA1jUqT58Q)|
 
 The model can be tested by running it through the simulator by executing
@@ -93,6 +93,6 @@ python drive.py model.h5
 ```
 
 ### Discussion
-Overall, it was amazing to learn keras and how with few lines of code the complete architecture can be implemented. 
+Overall, it was amazing to learn keras and how with few lines of code the complete architecture can be implemented.
 In terms of the project. Having a chance to create my own data set was great. However I wasn't able to sucessfully do it. Due to time crunch I followed data augmentation as instructed in Udacity's lectures. It would have been great to implement better augmentation as taught in previous lectures. Also I am not quite sure that the trained model will run properly on a real enviorment as well as it hardly happens that vehicle runs in isolation on roads.
-I also couldn't understand why a very long time is taken to obtain the **model.h5** file. It would have been great if heads up was provided initally regarding this, thus avoiding wasting of GPU resources and time. 
+I also couldn't understand why a very long time is taken to obtain the **model.h5** file. It would have been great if heads up was provided initally regarding this, thus avoiding wasting of GPU resources and time.
